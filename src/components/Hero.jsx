@@ -12,15 +12,20 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-primary">
+        <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{
+            backgroundImage: 'url(https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+        }}>
+            {/* Background Overlay */}
+            <div className="absolute inset-0 bg-black/80"></div>
+            
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
             </div>
 
-            <div className="container-custom relative z-10">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -62,7 +67,7 @@ const Hero = () => {
                             size="lg"
                             onClick={scrollToServices}
                             icon={FiArrowRight}
-                            className="text-primary bg-white hover:bg-gray-50"
+                            className="bg-white text-blue-600 hover:bg-gray-50 border-2 border-white"
                         >
                             Browse Services
                         </Button>
@@ -90,7 +95,7 @@ const Hero = () => {
                         ].map((feature, index) => (
                             <div
                                 key={index}
-                                className="flex items-center justify-center gap-2 text-white/90"
+                                className="flex items-center justify-center gap-2 text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
                             >
                                 <feature.icon className="w-5 h-5 text-yellow-300" />
                                 <span className="font-medium">{feature.text}</span>
@@ -110,7 +115,7 @@ const Hero = () => {
                 >
                     <path
                         d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-                        fill="var(--gray-50)"
+                        fill="#f9fafb"
                     />
                 </svg>
             </div>
