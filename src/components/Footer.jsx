@@ -108,9 +108,9 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm">
                             © {currentYear} Taskerway. All rights reserved.
                         </p>
-                        <p className="flex items-center gap-1 text-gray-400 text-sm">
+                        {/* <p className="flex items-center gap-1 text-gray-400 text-sm">
                             Made with <FiHeart className="w-4 h-4 text-red-500" /> in Australia
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             </div>
