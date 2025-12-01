@@ -68,23 +68,13 @@ const Navbar = () => {
                         >
                             About
                         </Link>
-                        {isHomePage ? (
-                            <button
-                                onClick={() => scrollToSection('services')}
-                                className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                    }`}
-                            >
-                                Services
-                            </button>
-                        ) : (
-                            <Link
-                                to="/services"
-                                className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                    }`}
-                            >
-                                Services
-                            </Link>
-                        )}
+                        <Link
+                            to="/services"
+                            className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
+                                }`}
+                        >
+                            Services
+                        </Link>
                         {isHomePage ? (
                             <button
                                 onClick={() => scrollToSection('contact')}
@@ -147,22 +137,13 @@ const Navbar = () => {
                     >
                         About
                     </Link>
-                    {isHomePage ? (
-                        <button
-                            onClick={() => scrollToSection('services')}
-                            className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-                        >
-                            Services
-                        </button>
-                    ) : (
-                        <Link
-                            to="/services"
-                            className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Services
-                        </Link>
-                    )}
+                    <Link
+                        to="/services"
+                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        Services
+                    </Link>
                     {isHomePage ? (
                         <button
                             onClick={() => scrollToSection('contact')}

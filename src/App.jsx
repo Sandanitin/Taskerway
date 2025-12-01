@@ -4,9 +4,10 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './components/About';
-import Services from './components/Services';
+// import Services from './components/Services';
 import Contact from './components/Contact';
 import Confirmation from './pages/Confirmation';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
@@ -27,5 +28,3 @@ function App() {
 }
 
 export default App;
-
-
