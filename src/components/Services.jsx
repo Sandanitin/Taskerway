@@ -29,6 +29,7 @@ const Services = () => {
             icon: MdOutlineAirplanemodeActive,
             gradient: 'from-purple-500 to-indigo-600',
             special: true,
+            image: '/images/services/airport_drop.jpg'
         },
         {
             id: 'transport',
@@ -36,6 +37,7 @@ const Services = () => {
             description: 'Moving goods and freight with care',
             icon: FiTruck,
             gradient: 'from-blue-500 to-cyan-600',
+            image: '/images/services/Transport & Logistics.jpg'
         },
         {
             id: 'cleaning',
@@ -43,6 +45,7 @@ const Services = () => {
             description: 'Professional cleaning for your home',
             icon: FiHome,
             gradient: 'from-green-500 to-teal-600',
+            image: '/images/services/home_cleaning.jpg'
         },
         {
             id: 'gardening',
@@ -50,6 +53,7 @@ const Services = () => {
             description: 'Keep your garden looking beautiful',
             icon: FiScissors,
             gradient: 'from-lime-500 to-green-600',
+            image: '/images/services/gardening.jpg'
         },
         {
             id: 'pickup',
@@ -57,6 +61,7 @@ const Services = () => {
             description: 'Quick and efficient delivery services',
             icon: FiPackage,
             gradient: 'from-orange-500 to-red-600',
+            image: '/images/services/pickup_delivery.jpg'
         },
         {
             id: 'plumbing',
@@ -64,6 +69,7 @@ const Services = () => {
             description: 'Expert plumbing repairs and installations',
             icon: FiDroplet,
             gradient: 'from-blue-600 to-indigo-700',
+            image: '/images/services/Plumbing.jpg'
         },
         {
             id: 'painting',
@@ -71,6 +77,7 @@ const Services = () => {
             description: 'Professional interior and exterior painting',
             icon: FiEdit3,
             gradient: 'from-pink-500 to-rose-600',
+            image: '/images/services/Painting.jpg'
         },
         {
             id: 'electrical',
@@ -78,6 +85,7 @@ const Services = () => {
             description: 'Licensed electrical work and repairs',
             icon: FiZap,
             gradient: 'from-yellow-500 to-orange-600',
+            image: '/images/services/electrical.jpg'
         },
         {
             id: 'carpentry',
@@ -85,6 +93,7 @@ const Services = () => {
             description: 'Custom woodwork and furniture repairs',
             icon: FiTool,
             gradient: 'from-amber-600 to-brown-700',
+            image: '/images/services/carpentry.jpg'
         },
         {
             id: 'it',
@@ -92,6 +101,7 @@ const Services = () => {
             description: 'Computer repairs and tech support',
             icon: FiMonitor,
             gradient: 'from-indigo-500 to-purple-600',
+            image: '/images/services/it_solutions.jpg'
         },
     ];
 
@@ -166,42 +176,51 @@ const Services = () => {
                                 onClick={() => handleServiceClick(service)}
                                 className="relative overflow-hidden group cursor-pointer h-full"
                             >
-                                {/* Gradient Background */}
-                                <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${service.gradient}`} />
-
-                                {/* Icon */}
-                                <div className={`relative inline-flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-gradient-to-r ${service.gradient} text-white shadow-lg`}>
-                                    <service.icon className="w-8 h-8" />
+                                {/* Service Image */}
+                                <div className="relative">
+                                    <img 
+                                        src={service.image} 
+                                        alt={service.title} 
+                                        className="w-full h-48 object-cover"
+                                    />
+                                    <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${service.gradient}`} />
+                                    
+                                    {service.special && (
+                                        <div className="absolute top-4 right-4">
+                                            <span className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg">
+                                                FEATURED
+                                            </span>
+                                        </div>
+                                    )}
                                 </div>
-
-                                {/* Content */}
-                                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                                    {service.title}
-                                </h3>
-                                <p className="text-gray-600 mb-4">
-                                    {service.description}
-                                </p>
-
-                                {/* CTA */}
-                                <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
-                                    Book Now
-                                    <svg
-                                        className="w-5 h-5 ml-1 group-hover:ml-2 transition-all"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                </div>
-
-                                {service.special && (
-                                    <div className="absolute top-4 right-4">
-                                        <span className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg">
-                                            FEATURED
-                                        </span>
+                                
+                                <div className="p-6">
+                                    {/* Icon */}
+                                    <div className={`relative inline-flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-gradient-to-r ${service.gradient} text-white shadow-lg`}>
+                                        <service.icon className="w-8 h-8" />
                                     </div>
-                                )}
+
+                                    {/* Content */}
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-gray-600 mb-4">
+                                        {service.description}
+                                    </p>
+
+                                    {/* CTA */}
+                                    <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                        Book Now
+                                        <svg
+                                            className="w-5 h-5 ml-1 group-hover:ml-2 transition-all"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </Card>
                         </motion.div>
                     ))}

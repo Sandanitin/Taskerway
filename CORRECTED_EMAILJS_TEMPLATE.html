@@ -1,0 +1,149 @@
+<!-- EMAILJS TEMPLATE - CORRECTED VERSION -->
+<!-- Template ID: template_uvnmczx -->
+<!-- Subject: Taskerway {{service_type}} Confirmation -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taskerway Confirmation</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f5f5f5; 
+        }
+        .container { 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            overflow: hidden; 
+        }
+        .header { 
+            background-color: #2563eb; 
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center; 
+        }
+        .content { 
+            padding: 30px; 
+        }
+        .section { 
+            margin-bottom: 25px; 
+        }
+        .section-title { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #2563eb; 
+            margin-bottom: 10px; 
+            border-bottom: 2px solid #2563eb; 
+            padding-bottom: 5px; 
+        }
+        .detail-item { 
+            margin-bottom: 10px; 
+        }
+        .detail-label { 
+            font-weight: bold; 
+            color: #555; 
+        }
+        .footer { 
+            background-color: #f1f5f9; 
+            padding: 20px; 
+            text-align: center; 
+            font-size: 14px; 
+            color: #666; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Taskerway Confirmation</h1>
+            <p>Thank you for choosing Taskerway</p>
+        </div>
+        
+        <div class="content">
+            <p>Hello {{customer_name}},</p>
+            
+            <div class="section">
+                <p>We've received your {{service_type}} request and will contact you within 24 hours.</p>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Request Details</div>
+                <div class="detail-item">
+                    <span class="detail-label">Service Type:</span> {{service_type}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Date:</span> {{date}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Time:</span> {{time}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Phone:</span> {{phone}}
+                </div>
+            </div>
+            
+            <!-- Airport Service Details -->
+            {{is_airport_service}}
+            <div class="section">
+                <div class="section-title">Airport Transfer Details</div>
+                <div class="detail-item">
+                    <span class="detail-label">Passenger Count:</span> {{passenger_count}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Pickup Address:</span> {{pickup_address}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Drop-off Address:</span> {{dropoff_address}}
+                </div>
+            </div>
+            {{/is_airport_service}}
+            
+            <!-- Contact Form Details -->
+            {{is_contact_form}}
+            <div class="section">
+                <div class="section-title">Inquiry Details</div>
+                <div class="detail-item">
+                    <span class="detail-label">Subject:</span> {{subject}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Message:</span> {{description}}
+                </div>
+            </div>
+            {{/is_contact_form}}
+            
+            <!-- Service Details -->
+            {{address}}
+            <div class="section">
+                <div class="section-title">Service Details</div>
+                <div class="detail-item">
+                    <span class="detail-label">Address:</span> {{address}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Description:</span> {{description}}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Budget:</span> {{budget}}
+                </div>
+            </div>
+            {{/address}}
+            
+            <div class="section">
+                <p>Our team will review your request and contact you soon.</p>
+                <p>If you have any urgent questions, please call us at (02) 1234 5678.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Taskerway Professional Services</p>
+            <p>Email: <a href="mailto:support@taskerway.com.au">support@taskerway.com.au</a></p>
+            <p>© 2023 Taskerway. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

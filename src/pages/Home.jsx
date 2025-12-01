@@ -49,9 +49,11 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="relative">
-                            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center">
-                                <span className="text-gray-500">Professional Team Image</span>
-                            </div>
+                            <img 
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400&q=80" 
+                                alt="Professional Team" 
+                                className="w-full h-96 object-cover rounded-xl"
+                            />
                             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
                                 <div className="text-3xl font-bold text-primary">10+</div>
                                 <div className="text-gray-600">Years Experience</div>

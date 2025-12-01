@@ -92,6 +92,15 @@ const Navbar = () => {
                                 Contact
                             </Link>
                         )}
+                                                
+                        {/* Email Test Link - for development only */}
+                        <Link
+                            to="/email-test"
+                            className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
+                                }`}
+                        >
+                            Email Test
+                        </Link>
 
                         <a
                             href="tel:0458717810"
@@ -160,6 +169,15 @@ const Navbar = () => {
                             Contact
                         </Link>
                     )}
+                                        
+                    {/* Email Test Link - for development only */}
+                    <Link
+                        to="/email-test"
+                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        Email Test
+                    </Link>
 
                     <a
                         href="tel:0458717810"

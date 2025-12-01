@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiPhone, FiMail, FiMapPin, FiClock, FiMessageSquare, FiHeadphones } from 'react-icons/fi';
+import { sendContactFormEmail } from '../utils/emailService';
 
 const Contact = () => {
     const contactInfo = [
@@ -32,6 +33,92 @@ const Contact = () => {
             gradient: 'from-orange-500 to-red-600',
         },
     ];
+
+    // Form state
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    // Handle form input changes
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            // Combine first and last name
+            const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+            
+            // Prepare data for email service with proper formatting
+            const emailData = {
+                name: fullName || 'Anonymous',
+                email: formData.email || 'noreply@example.com',
+                serviceType: 'Contact Form Inquiry',
+                phone: 'Not provided',
+                address: '',
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
+                description: (formData.message || '').trim(),
+                budget: '',
+                subject: (formData.subject || 'General Inquiry').trim(),
+                // For contact forms, we need to set this to "true" to show contact section
+                is_contact_form: 'true'
+            };
+
+            console.log('Sending contact form email with data:', emailData);
+            
+            // Send email using the contact form service
+            const result = await sendContactFormEmail(emailData);
+            console.log('Contact form email sent:', result);
+            
+            // Check if this was a mock response
+            if (result && result.mock) {
+                console.warn('Email was sent via mock service, not real EmailJS. Check console for EmailJS errors.');
+                setSubmitStatus({
+                    type: 'warning',
+                    message: 'Message sent successfully! (Note: Email service is in test mode. For real emails, please contact support to configure EmailJS properly.)'
+                });
+            } else {
+                setSubmitStatus({
+                    type: 'success',
+                    message: 'Message sent successfully! We\'ll get back to you soon.'
+                });
+            }
+
+            // Reset form
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+        } catch (error) {
+            console.error('Error submitting contact form:', error);
+            setSubmitStatus({
+                type: 'error',
+                message: error.message || 'Failed to send message. Please try again or call us directly.'
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section id="contact" className="section bg-white">
@@ -101,22 +188,30 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="bg-gray-50 p-8 rounded-xl">
                         <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-gray-700 mb-2">First Name</label>
                                     <input 
                                         type="text" 
+                                        name="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleInputChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                         placeholder="John"
+                                        required
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-gray-700 mb-2">Last Name</label>
                                     <input 
                                         type="text" 
+                                        name="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleInputChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                         placeholder="Doe"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -124,31 +219,56 @@ const Contact = () => {
                                 <label className="block text-gray-700 mb-2">Email</label>
                                 <input 
                                     type="email" 
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                     placeholder="john@example.com"
+                                    required
                                 />
                             </div>
                             <div>
                                 <label className="block text-gray-700 mb-2">Subject</label>
                                 <input 
                                     type="text" 
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleInputChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                     placeholder="How can we help?"
+                                    required
                                 />
                             </div>
                             <div>
                                 <label className="block text-gray-700 mb-2">Message</label>
                                 <textarea 
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
                                     rows="5" 
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                     placeholder="Your message here..."
+                                    required
                                 ></textarea>
                             </div>
+                            
+                            {/* Submit status message */}
+                            {submitStatus && (
+                                <div className={`p-4 rounded-lg ${
+                                    submitStatus.type === 'success' ? 'bg-green-100 text-green-800' :
+                                    submitStatus.type === 'error' ? 'bg-red-100 text-red-800' :
+                                    'bg-yellow-100 text-yellow-800'
+                                }`}>
+                                    {submitStatus.message}
+                                </div>
+                            )}
+                            
                             <button 
                                 type="submit"
+                                disabled={isSubmitting}
                                 className="btn btn-primary w-full"
                             >
-                                Send Message
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
                     </div>

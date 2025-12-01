@@ -138,6 +138,10 @@ const Confirmation = () => {
                             A confirmation email has been sent to <strong>{bookingData.email}</strong>.
                             Please check your inbox for further details.
                         </p>
+                        <p className="text-xs text-blue-700 mt-2">
+                            Note: If you don't receive an email within a few minutes, please contact us directly.
+                            Our system may be in test mode.
+                        </p>
                     </div>
                 </motion.div>
 

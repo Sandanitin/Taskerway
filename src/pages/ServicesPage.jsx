@@ -28,7 +28,7 @@ const ServicesPage = () => {
             icon: MdOutlineAirplanemodeActive,
             gradient: 'from-purple-500 to-indigo-600',
             special: true,
-            image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/airport_drop.jpg'
         },
         {
             id: 'transport',
@@ -36,7 +36,7 @@ const ServicesPage = () => {
             description: 'Moving goods and freight with care. Our transport services cover everything from small packages to large freight with secure handling and timely delivery.',
             icon: FiTruck,
             gradient: 'from-blue-500 to-cyan-600',
-            image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/Transport & Logistics.jpg'
         },
         {
             id: 'cleaning',
@@ -44,7 +44,7 @@ const ServicesPage = () => {
             description: 'Professional cleaning for your home. Our trained cleaners use eco-friendly products to leave your space spotless and refreshed, tailored to your specific needs.',
             icon: FiHome,
             gradient: 'from-green-500 to-teal-600',
-            image: 'https://images.unsplash.com/photo-1600566753130-0fc80a0a1d3d?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/home_cleaning.jpg'
         },
         {
             id: 'gardening',
@@ -52,7 +52,7 @@ const ServicesPage = () => {
             description: 'Keep your garden looking beautiful. Our gardening experts provide lawn mowing, pruning, planting, and seasonal maintenance to enhance your outdoor space.',
             icon: FiScissors,
             gradient: 'from-lime-500 to-green-600',
-            image: 'https://images.unsplash.com/photo-1593118247621-fca57a133e70?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/gardening.jpg'
         },
         {
             id: 'pickup',
@@ -60,7 +60,7 @@ const ServicesPage = () => {
             description: 'Quick and efficient delivery services. Whether it\'s documents, parcels, or larger items, we offer reliable same-day and scheduled delivery options.',
             icon: FiPackage,
             gradient: 'from-orange-500 to-red-600',
-            image: 'https://images.unsplash.com/photo-1601628828688-632f38b5a5c7?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/pickup_delivery.jpg'
         },
         {
             id: 'plumbing',
@@ -68,7 +68,7 @@ const ServicesPage = () => {
             description: 'Expert plumbing repairs and installations. From leaky taps to major pipe work, our licensed plumbers provide fast, reliable solutions for all your plumbing needs.',
             icon: FiDroplet,
             gradient: 'from-blue-600 to-indigo-700',
-            image: 'https://images.unsplash.com/photo-1607472586893-9d3bd81865f0?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/Plumbing.jpg'
         },
         {
             id: 'painting',
@@ -76,7 +76,7 @@ const ServicesPage = () => {
             description: 'Professional interior and exterior painting. Transform your space with our expert painters who deliver flawless finishes with quality paints and meticulous attention to detail.',
             icon: FiEdit3,
             gradient: 'from-pink-500 to-rose-600',
-            image: 'https://images.unsplash.com/photo-1601628828688-632f38b5a5c7?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/Painting.jpg'
         },
         {
             id: 'electrical',
@@ -84,7 +84,7 @@ const ServicesPage = () => {
             description: 'Licensed electrical work and repairs. Our certified electricians handle installations, repairs, safety inspections, and upgrades to keep your property safe and functional.',
             icon: FiZap,
             gradient: 'from-yellow-500 to-orange-600',
-            image: 'https://images.unsplash.com/photo-1607472586893-9d3bd81865f0?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/electrical.jpg'
         },
         {
             id: 'carpentry',
@@ -92,7 +92,7 @@ const ServicesPage = () => {
             description: 'Custom woodwork and furniture repairs. From furniture restoration to custom installations, our skilled carpenters bring craftsmanship and precision to every project.',
             icon: FiTool,
             gradient: 'from-amber-600 to-brown-700',
-            image: 'https://images.unsplash.com/photo-1593118247621-fca57a133e70?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/carpentry.jpg'
         },
         {
             id: 'it',
@@ -100,7 +100,7 @@ const ServicesPage = () => {
             description: 'Computer repairs and tech support. Get help with hardware issues, software problems, network setup, and tech support from our qualified IT professionals.',
             icon: FiMonitor,
             gradient: 'from-indigo-500 to-purple-600',
-            image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&h=400&q=80'
+            image: '/images/services/it_solutions.jpg'
         },
     ];
 

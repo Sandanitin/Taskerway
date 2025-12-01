@@ -63,12 +63,16 @@ const About = () => {
                             transition={{ duration: 0.8 }}
                             className="relative"
                         >
-                            <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center">
-                                <div className="text-center">
-                                    <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-3xl font-bold text-white">TW</span>
-                                    </div>
-                                    <p className="text-gray-600">Professional Service Since 2019</p>
+                            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&h=400&q=80" 
+                                    alt="Taskerway Team" 
+                                    className="w-full h-96 object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 text-white">
+                                    <div className="text-3xl font-bold mb-2">TW</div>
+                                    <p className="text-lg">Professional Service Since 2019</p>
                                 </div>
                             </div>
                         </motion.div>

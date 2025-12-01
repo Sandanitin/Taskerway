@@ -70,10 +70,20 @@ const ServiceModal = ({ isOpen, onClose, service }) => {
         setIsSubmitting(true);
 
         try {
-            await sendServiceBookingEmail({
+            console.log('Attempting to send service booking email with data:', {...formData, serviceType: service?.title || 'Service'});
+            const result = await sendServiceBookingEmail({
                 ...formData,
                 serviceType: service?.title || 'Service',
             });
+            console.log('Email sending result:', result);
+            
+            // Check if this was a mock response
+            if (result && result.mock) {
+                console.warn('Email was sent via mock service, not real EmailJS. Check console for EmailJS errors.');
+                alert('Booking submitted successfully! (Note: Email service is in test mode. For real emails, please contact support to configure EmailJS properly.)');
+            } else {
+                alert('Booking submitted successfully! A confirmation email will be sent to ' + formData.email);
+            }
 
             navigate('/confirmation', {
                 state: {
@@ -97,7 +107,12 @@ const ServiceModal = ({ isOpen, onClose, service }) => {
             onClose();
         } catch (error) {
             console.error('Error submitting booking:', error);
-            alert('There was an error submitting your booking. Please try again or call us directly.');
+            // Show more specific error message to user
+            if (error.message) {
+                alert(error.message);
+            } else {
+                alert('There was an error submitting your booking. Please try again or call us directly.');
+            }
         } finally {
             setIsSubmitting(false);
         }

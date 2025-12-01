@@ -100,7 +100,17 @@ const AirportBooking = ({ isOpen, onClose }) => {
 
         try {
             // Send email using EmailJS
-            await sendAirportBookingEmail(formData);
+            console.log('Attempting to send airport booking email with data:', formData);
+            const result = await sendAirportBookingEmail(formData);
+            console.log('Email sending result:', result);
+            
+            // Check if this was a mock response
+            if (result && result.mock) {
+                console.warn('Email was sent via mock service, not real EmailJS. Check console for EmailJS errors.');
+                alert('Booking submitted successfully! (Note: Email service is in test mode. For real emails, please contact support to configure EmailJS properly.)');
+            } else {
+                alert('Booking submitted successfully! A confirmation email will be sent to ' + formData.email);
+            }
 
             // Navigate to confirmation page
             navigate('/confirmation', { state: { bookingData: formData } });
@@ -121,7 +131,12 @@ const AirportBooking = ({ isOpen, onClose }) => {
             onClose();
         } catch (error) {
             console.error('Error submitting booking:', error);
-            alert('There was an error submitting your booking. Please try again or call us directly.');
+            // Show more specific error message to user
+            if (error.message) {
+                alert(error.message);
+            } else {
+                alert('There was an error submitting your booking. Please try again or call us directly.');
+            }
         } finally {
             setIsSubmitting(false);
         }
