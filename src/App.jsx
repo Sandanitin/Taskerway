@@ -1,23 +1,25 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Confirmation from './pages/Confirmation';
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={
-          <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Admin Dashboard
-              </h1>
-            </div>
-          </div>
-        } />
-      </Routes>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
 
