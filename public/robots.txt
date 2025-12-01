@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /services
+Allow: /about
+Allow: /contact
+
+Disallow: /confirmation
+Disallow: /admin
+Disallow: /api
+
+# Sitemap
+Sitemap: https://www.taskerway.com.au/sitemap.xml
+
+# Crawl delay to be polite to search engines
+Crawl-delay: 1

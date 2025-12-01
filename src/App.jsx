@@ -9,7 +9,6 @@ import Contact from './components/Contact';
 import Confirmation from './pages/Confirmation';
 import ServicesPage from './pages/ServicesPage';
 import ScrollToTop from './components/ScrollToTop';
-import EmailTest from './components/EmailTest';
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation />} />
-          <Route path="/email-test" element={<EmailTest />} />
         </Routes>
       </main>
       <Footer />

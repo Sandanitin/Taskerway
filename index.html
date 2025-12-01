@@ -1,23 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/images/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nithin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root">
-      <div style="text-align: center; padding: 2rem;">
-        <h1>Loading...</h1>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Taskerway - Professional Service Platform | Airport Transfers, Home Services & More</title>
+  <meta name="title" content="Taskerway - Professional Service Platform | Airport Transfers, Home Services & More" />
+  <meta name="description"
+    content="Book professional services in Australia with Taskerway. Airport pick/drop, transport, cleaning, plumbing, electrical, IT solutions & more. Available 24/7. Fast, reliable, affordable." />
+  <meta name="keywords"
+    content="airport transfer Australia, home services, professional services, cleaning services, plumbing, electrical services, IT solutions, transport services, handyman services, Sydney services, Melbourne services" />
+  <meta name="author" content="Taskerway" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.taskerway.com.au/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.taskerway.com.au/" />
+  <meta property="og:title" content="Taskerway - Professional Service Platform | Airport Transfers & Home Services" />
+  <meta property="og:description"
+    content="Book professional services in Australia with Taskerway. Airport transfers, cleaning, plumbing, electrical, IT solutions & more. Available 24/7." />
+  <meta property="og:image" content="https://www.taskerway.com.au/images/logo.png" />
+  <meta property="og:site_name" content="Taskerway" />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.taskerway.com.au/" />
+  <meta property="twitter:title" content="Taskerway - Professional Service Platform" />
+  <meta property="twitter:description"
+    content="Book professional services in Australia. Airport transfers, home services & more. Available 24/7." />
+  <meta property="twitter:image" content="https://www.taskerway.com.au/images/logo.png" />
+
+  <!-- Mobile App Meta -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Taskerway" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="msapplication-TileColor" content="#2563eb" />
+
+  <!-- Preconnect to improve performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data (JSON-LD) for Rich Snippets -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Taskerway",
+      "image": "https://www.taskerway.com.au/images/logo.png",
+      "@id": "https://www.taskerway.com.au",
+      "url": "https://www.taskerway.com.au",
+      "telephone": "0458717810",
+      "email": "support@taskerway.com.au",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Coming Soon",
+        "addressLocality": "Sydney",
+        "addressRegion": "NSW",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.facebook.com/taskerway",
+        "https://www.instagram.com/taskerway",
+        "https://www.linkedin.com/company/taskerway"
+      ],
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Professional Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Airport Pick/Drop Service",
+              "description": "Reliable airport transfer services with comfortable vehicles"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Home Cleaning",
+              "description": "Professional house cleaning services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "IT Solutions",
+              "description": "Technical support and IT services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plumbing Services",
+              "description": "Expert plumbing repairs and installations"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+
+<body>
+  <div id="root">
+    <div style="text-align: center; padding: 2rem;">
+      <h1>Loading Taskerway...</h1>
+      <p>Your trusted professional service platform</p>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html> 
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
