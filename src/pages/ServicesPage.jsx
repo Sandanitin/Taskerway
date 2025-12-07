@@ -135,13 +135,13 @@ const ServicesPage = () => {
     };
 
     return (
-        <section className="py-16 bg-gray-50 min-h-screen">
-            <div className="container-custom">
+        <section className="pt-24 pb-16 bg-gray-50 min-h-screen">
+            <div className="container-custom px-4">
                 <div className="text-center mb-16">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
                     >
                         Our <span className="gradient-text">Services</span>
                     </motion.h1>
@@ -149,14 +149,14 @@ const ServicesPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-gray-600 max-w-2xl mx-auto"
+                        className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2"
                     >
                         Whatever you need, we've got you covered. Professional services at your fingertips.
                     </motion.p>
                 </div>
 
                 {/* Service Categories */}
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
                     {[
                         'All Services',
                         'Transport',
@@ -166,9 +166,9 @@ const ServicesPage = () => {
                     ].map((category, index) => (
                         <button
                             key={index}
-                            className={`py-2 px-4 rounded-lg text-center ${index === 0 
-                                ? 'bg-primary text-white' 
-                                : 'bg-white text-gray-700 hover:bg-gray-100'}`
+                            className={`py-2 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap ${index === 0
+                                ? 'bg-primary text-white'
+                                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'}`
                             }
                         >
                             {category}
@@ -180,7 +180,7 @@ const ServicesPage = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
                 >
                     {services.map((service) => (
                         <motion.div
@@ -192,13 +192,13 @@ const ServicesPage = () => {
                             onClick={() => handleServiceClick(service)}
                         >
                             <div className="relative">
-                                <img 
-                                    src={service.image} 
-                                    alt={service.title} 
+                                <img
+                                    src={service.image}
+                                    alt={service.title}
                                     className="w-full h-48 object-cover"
                                 />
                                 <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${service.gradient}`} />
-                                
+
                                 {service.special && (
                                     <div className="absolute top-4 right-4">
                                         <span className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg">
@@ -207,7 +207,7 @@ const ServicesPage = () => {
                                     </div>
                                 )}
                             </div>
-                            
+
                             <div className="p-6">
                                 <div className="flex items-center mb-4">
                                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${service.gradient} text-white shadow-md mr-4`}>
@@ -217,11 +217,11 @@ const ServicesPage = () => {
                                         {service.title}
                                     </h3>
                                 </div>
-                                
+
                                 <p className="text-gray-600 mb-4">
                                     {service.description}
                                 </p>
-                                
+
                                 <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
                                     Book Now
                                     <svg
@@ -246,7 +246,7 @@ const ServicesPage = () => {
                             We stand behind the quality of our work. If you're not satisfied, we'll make it right.
                         </p>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {

@@ -136,14 +136,14 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="section bg-gray-50">
+        <section id="services" className="section bg-gray-50 px-4">
             <div className="container-custom">
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
                     >
                         Our <span className="gradient-text">Services</span>
                     </motion.h2>
@@ -152,7 +152,7 @@ const Services = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-gray-600 max-w-2xl mx-auto"
+                        className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2"
                     >
                         Whatever you need, we've got you covered. Professional services at your fingertips.
                     </motion.p>
@@ -163,7 +163,7 @@ const Services = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
                 >
                     {services.map((service) => (
                         <motion.div
@@ -178,13 +178,13 @@ const Services = () => {
                             >
                                 {/* Service Image */}
                                 <div className="relative">
-                                    <img 
-                                        src={service.image} 
-                                        alt={service.title} 
+                                    <img
+                                        src={service.image}
+                                        alt={service.title}
                                         className="w-full h-48 object-cover"
                                     />
                                     <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${service.gradient}`} />
-                                    
+
                                     {service.special && (
                                         <div className="absolute top-4 right-4">
                                             <span className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg">
@@ -193,7 +193,7 @@ const Services = () => {
                                         </div>
                                     )}
                                 </div>
-                                
+
                                 <div className="p-6">
                                     {/* Icon */}
                                     <div className={`relative inline-flex items-center justify-center w-16 h-16 mb-4 rounded-xl bg-gradient-to-r ${service.gradient} text-white shadow-lg`}>

@@ -29,7 +29,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-lg' : 'shadow-md'
                 }`}
         >
             <div className="container-custom">
@@ -46,7 +46,7 @@ const Navbar = () => {
                                 alt="Taskerway"
                                 className="h-12 w-auto object-contain"
                             />
-                            <span className={`text-2xl font-bold gradient-text ${isScrolled ? '' : 'text-white'}`}>
+                            <span className="text-2xl font-bold text-black">
                                 Taskerway
                             </span>
                         </Link>
@@ -56,38 +56,33 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center space-x-8">
                         <Link
                             to="/"
-                            className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                }`}
+                            className="font-medium transition-colors text-gray-700 hover:text-primary"
                         >
                             Home
                         </Link>
                         <Link
                             to="/about"
-                            className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                }`}
+                            className="font-medium transition-colors text-gray-700 hover:text-primary"
                         >
                             About
                         </Link>
                         <Link
                             to="/services"
-                            className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                }`}
+                            className="font-medium transition-colors text-gray-700 hover:text-primary"
                         >
                             Services
                         </Link>
                         {isHomePage ? (
                             <button
                                 onClick={() => scrollToSection('contact')}
-                                className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                    }`}
+                                className="font-medium transition-colors text-gray-700 hover:text-primary"
                             >
                                 Contact
                             </button>
                         ) : (
                             <Link
                                 to="/contact"
-                                className={`font-medium transition-colors ${isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-gray-200'
-                                    }`}
+                                className="font-medium transition-colors text-gray-700 hover:text-primary"
                             >
                                 Contact
                             </Link>
@@ -105,8 +100,7 @@ const Navbar = () => {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className={`md:hidden p-2 rounded-lg ${isScrolled ? 'text-gray-700' : 'text-white'
-                            }`}
+                        className="md:hidden p-2 rounded-lg text-gray-700"
                     >
                         {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
                     </button>
