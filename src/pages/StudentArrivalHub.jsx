@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSend, FiHome, FiBriefcase, FiUserPlus, FiCheck, FiPhone } from 'react-icons/fi';
+import { FiSend, FiHome, FiBriefcase, FiUserPlus, FiCheck, FiPhone, FiX } from 'react-icons/fi';
 import StudentRegistrationForm from '../components/StudentRegistrationForm';
 import HowItWorks from '../components/student-arrival/HowItWorks';
 import WhatsIncluded from '../components/student-arrival/WhatsIncluded';
@@ -11,6 +11,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 const StudentArrivalHub = () => {
     const [showForm, setShowForm] = useState(false);
     const [selectedService, setSelectedService] = useState('complete');
+    const [showBanner, setShowBanner] = useState(true);
 
     const handleCTAClick = (service) => {
         setSelectedService(service);
@@ -83,7 +84,7 @@ const StudentArrivalHub = () => {
                             transition={{ delay: 0.1 }}
                             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
                         >
-                            Welcome to Australia! 🇦🇺
+                            Welcome to Your New Country! 🌍
                             <br />
                             <span className="text-yellow-300">We've Got You Covered</span>
                         </motion.h1>
@@ -94,7 +95,7 @@ const StudentArrivalHub = () => {
                             transition={{ delay: 0.2 }}
                             className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto"
                         >
-                            From airport pickup to finding your first job, we help Indian students settle smoothly in Australia.
+                            From airport pickup to finding your first job, we help international students settle smoothly in their new country.
                             No stress, just support every step of the way.
                         </motion.p>
 
@@ -127,6 +128,38 @@ const StudentArrivalHub = () => {
                     </svg>
                 </div>
             </section>
+
+            {/* Info Banner */}
+            {showBanner && (
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-4 shadow-lg"
+                >
+                    <div className="container-custom">
+                        <div className="flex items-center justify-between gap-4">
+                            <div className="flex items-center gap-3 flex-1">
+                                <div className="flex-shrink-0">
+                                    <svg className="w-6 h-6 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <p className="text-sm sm:text-base text-white/95">
+                                    <strong className="font-semibold">International Students:</strong> While our student arrival services are available across Australia, we're also happy to assist students arriving in other countries upon request. Just message us with your destination.
+                                </p>
+                            </div>
+                            <button
+                                onClick={() => setShowBanner(false)}
+                                className="flex-shrink-0 p-1 hover:bg-white/20 rounded-full transition-colors"
+                                aria-label="Close banner"
+                            >
+                                <FiX className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
 
             {/* CTA Buttons Section */}
             <section className="py-12 sm:py-16 px-4">
