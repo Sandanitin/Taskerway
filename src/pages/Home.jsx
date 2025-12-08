@@ -7,14 +7,14 @@ const Home = () => {
     return (
         <div>
             <Hero />
-            
+
             {/* Services Section */}
             <section className="section bg-white">
                 <div className="container-custom">
                     <Services />
                 </div>
             </section>
-            
+
             {/* About Section */}
             <section className="section bg-gray-50">
                 <div className="container-custom">
@@ -49,9 +49,9 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="relative">
-                            <img 
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400&q=80" 
-                                alt="Professional Team" 
+                            <img
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Professional Team"
                                 className="w-full h-96 object-cover rounded-xl"
                             />
                             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
@@ -62,49 +62,55 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            
+
             {/* How It Works */}
-            <section className="section bg-white">
+            <section className="py-12 bg-white">
                 <div className="container-custom">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-8">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
                             How <span className="gradient-text">It Works</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                            Getting help has never been easier. Just follow these simple steps.
+                            Getting help has never been easier. Just follow these simple steps:
                         </p>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
                                 step: '01',
-                                title: 'Choose Service',
+                                title: 'Choose a Service',
                                 description: 'Browse our wide range of services and select what you need.'
                             },
                             {
                                 step: '02',
                                 title: 'Book Online',
-                                description: 'Provide details and schedule at your convenience.'
+                                description: 'Share your details and schedule the service at your convenience.'
                             },
                             {
                                 step: '03',
                                 title: 'We Handle It',
-                                description: 'Our professionals arrive and complete the task.'
+                                description: 'Our trusted professionals arrive on time and get the job done.'
                             }
                         ].map((item, index) => (
-                            <div key={index} className="text-center p-6">
-                                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white text-xl font-bold mb-6">
+                            <div key={index} className="text-center p-4">
+                                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white text-xl font-bold mb-4">
                                     {item.step}
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
                                 <p className="text-gray-600">{item.description}</p>
                             </div>
                         ))}
                     </div>
+
+                    <div className="text-center mt-8">
+                        <p className="text-2xl font-semibold gradient-text">
+                            "Your task, our responsibility."
+                        </p>
+                    </div>
                 </div>
             </section>
-            
+
             {/* Contact section removed from home page */}
         </div>
     );
