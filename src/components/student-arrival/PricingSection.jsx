@@ -215,7 +215,7 @@ const PricingSection = () => {
                         Need a custom package? We're flexible!
                     </p>
                     <a
-                        href="https://wa.me/61458717810?text=Hi!%20I'd%20like%20to%20discuss%20custom%20pricing%20for%20student%20services."
+                        href="https://wa.me/61468717810?text=Hi!%20I'd%20like%20to%20discuss%20custom%20pricing%20for%20student%20services."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"

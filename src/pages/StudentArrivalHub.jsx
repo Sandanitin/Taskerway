@@ -295,7 +295,7 @@ const StudentArrivalHub = () => {
                             Chat with us on WhatsApp for instant answers in Hindi or English
                         </p>
                         <a
-                            href="https://wa.me/61458717810?text=Hi!%20I'm%20an%20international%20student%20interested%20in%20your%20arrival%20services."
+                            href="https://wa.me/61468717810?text=Hi!%20I'm%20an%20international%20student%20interested%20in%20your%20arrival%20services."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all hover:scale-105"

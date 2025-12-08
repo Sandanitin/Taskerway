@@ -128,7 +128,7 @@ const FAQSection = () => {
                         We're here to help! Chat with us on WhatsApp and we'll answer all your questions in Hindi or English.
                     </p>
                     <a
-                        href="https://wa.me/61458717810?text=Hi!%20I%20have%20some%20questions%20about%20the%20student%20arrival%20services."
+                        href="https://wa.me/61468717810?text=Hi!%20I%20have%20some%20questions%20about%20the%20student%20arrival%20services."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"

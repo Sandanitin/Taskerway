@@ -162,7 +162,7 @@ const StudentRegistrationForm = ({ selectedService = 'complete' }) => {
             message += `*Service Package:* ${formData.serviceType === 'complete' ? 'Complete Arrival Package' : formData.serviceType}`;
 
             // WhatsApp number
-            const whatsappNumber = '61458717810';
+            const whatsappNumber = '61468717810';
 
             // Create WhatsApp URL with pre-filled message
             const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
