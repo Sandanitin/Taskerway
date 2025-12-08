@@ -14,16 +14,17 @@ const About = () => {
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
             <section className="relative py-20 bg-gradient-to-br from-blue-600 to-purple-700">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
+                        className="text-center"
                     >
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
                             About Taskerway
                         </h1>
-                        <p className="text-xl text-white/90 max-w-3xl mx-auto">
+                        <p className="text-xl text-white/90 max-w-3xl mx-auto text-center">
                             We&apos;re dedicated to providing exceptional service solutions that make your life easier
                         </p>
                     </motion.div>
@@ -44,15 +45,15 @@ const About = () => {
                                 Our Story
                             </h2>
                             <p className="text-lg text-gray-600 mb-6">
-                                Taskerway was founded with a simple mission: to connect people with reliable, professional services they can trust. 
+                                Taskerway was founded with a simple mission: to connect people with reliable, professional services they can trust.
                                 We saw a gap in the market for a service platform that combines quality, convenience, and affordability.
                             </p>
                             <p className="text-lg text-gray-600 mb-6">
-                                We&apos;re proud to serve thousands of customers across multiple service categories, 
+                                We&apos;re proud to serve thousands of customers across multiple service categories,
                                 from airport transfers to home maintenance, always maintaining our commitment to excellence.
                             </p>
                             <p className="text-lg text-gray-600">
-                                Our team of dedicated professionals works around the clock to ensure you get the service you need, 
+                                Our team of dedicated professionals works around the clock to ensure you get the service you need,
                                 when you need it.
                             </p>
                         </motion.div>
@@ -64,9 +65,9 @@ const About = () => {
                             className="relative"
                         >
                             <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&h=400&q=80" 
-                                    alt="Taskerway Team" 
+                                <img
+                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&h=400&q=80"
+                                    alt="Taskerway Team"
                                     className="w-full h-96 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
