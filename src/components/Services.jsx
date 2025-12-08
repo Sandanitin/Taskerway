@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
     FiTruck,
     FiHome,
@@ -22,6 +23,21 @@ const Services = () => {
     const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
 
     const services = [
+        {
+            id: 'student-arrival',
+            title: 'Student Arrival Hub',
+            description: 'Complete support for international students arriving in Australia',
+            icon: () => (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            ),
+            gradient: 'from-orange-500 to-red-600',
+            special: true,
+            badge: 'FOR STUDENTS',
+            linkTo: '/student-arrival',
+            image: '/images/services/student_arrival.jpg'
+        },
         {
             id: 'airport',
             title: 'Airport Pick/Drop',
@@ -106,7 +122,10 @@ const Services = () => {
     ];
 
     const handleServiceClick = (service) => {
-        if (service.special) {
+        // If service has a linkTo, we'll handle it differently (via Link component)
+        if (service.linkTo) {
+            return; // Handled by Link wrapper in the render
+        } else if (service.special && service.id === 'airport') {
             setIsAirportModalOpen(true);
         } else {
             setSelectedService(service);
@@ -165,13 +184,8 @@ const Services = () => {
                     viewport={{ once: true }}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
                 >
-                    {services.map((service) => (
-                        <motion.div
-                            key={service.id}
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.98 }}
-                        >
+                    {services.map((service) => {
+                        const cardContent = (
                             <Card
                                 onClick={() => handleServiceClick(service)}
                                 className="relative overflow-hidden group cursor-pointer h-full"
@@ -188,7 +202,7 @@ const Services = () => {
                                     {service.special && (
                                         <div className="absolute top-4 right-4">
                                             <span className="px-3 py-1 text-xs font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-lg">
-                                                FEATURED
+                                                {service.badge || 'FEATURED'}
                                             </span>
                                         </div>
                                     )}
@@ -210,7 +224,7 @@ const Services = () => {
 
                                     {/* CTA */}
                                     <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
-                                        Book Now
+                                        {service.linkTo ? 'Learn More' : 'Book Now'}
                                         <svg
                                             className="w-5 h-5 ml-1 group-hover:ml-2 transition-all"
                                             fill="none"
@@ -222,8 +236,25 @@ const Services = () => {
                                     </div>
                                 </div>
                             </Card>
-                        </motion.div>
-                    ))}
+                        );
+
+                        return (
+                            <motion.div
+                                key={service.id}
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                {service.linkTo ? (
+                                    <Link to={service.linkTo}>
+                                        {cardContent}
+                                    </Link>
+                                ) : (
+                                    cardContent
+                                )}
+                            </motion.div>
+                        );
+                    })}
                 </motion.div>
             </div>
 

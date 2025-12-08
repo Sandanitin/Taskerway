@@ -8,6 +8,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Confirmation from './pages/Confirmation';
 import ServicesPage from './pages/ServicesPage';
+import StudentArrivalHub from './pages/StudentArrivalHub';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/student-arrival" element={<StudentArrivalHub />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation />} />
         </Routes>

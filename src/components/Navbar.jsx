@@ -31,13 +31,14 @@ const Navbar = () => {
         { to: '/', label: 'Home' },
         { to: '/about', label: 'About' },
         { to: '/services', label: 'Services' },
+        { to: '/student-arrival', label: 'Student Hub' },
     ];
 
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-white/95 backdrop-blur-md shadow-lg'
-                    : 'bg-white shadow-sm'
+                ? 'bg-white/95 backdrop-blur-md shadow-lg'
+                : 'bg-white shadow-sm'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,8 +80,8 @@ const Navbar = () => {
                                 <Link
                                     to={link.to}
                                     className={`px-4 py-2 rounded-full font-medium transition-all duration-200 ${location.pathname === link.to
-                                            ? 'bg-blue-50 text-blue-600'
-                                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                                        ? 'bg-blue-50 text-blue-600'
+                                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                                         }`}
                                 >
                                     {link.label}
@@ -151,8 +152,8 @@ const Navbar = () => {
                             key={link.to}
                             to={link.to}
                             className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all ${location.pathname === link.to
-                                    ? 'bg-blue-50 text-blue-600'
-                                    : 'text-gray-700 hover:bg-gray-50'
+                                ? 'bg-blue-50 text-blue-600'
+                                : 'text-gray-700 hover:bg-gray-50'
                                 }`}
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
