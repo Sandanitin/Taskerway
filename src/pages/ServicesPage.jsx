@@ -19,6 +19,7 @@ const ServicesPage = () => {
     const [selectedService, setSelectedService] = useState(null);
     const [isAirportModalOpen, setIsAirportModalOpen] = useState(false);
     const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('All Services');
 
     const services = [
         {
@@ -28,6 +29,7 @@ const ServicesPage = () => {
             icon: MdOutlineAirplanemodeActive,
             gradient: 'from-purple-500 to-indigo-600',
             special: true,
+            category: 'Transport',
             image: '/images/services/airport_drop.jpg'
         },
         {
@@ -36,6 +38,7 @@ const ServicesPage = () => {
             description: 'Moving goods and freight with care. Our transport services cover everything from small packages to large freight with secure handling and timely delivery.',
             icon: FiTruck,
             gradient: 'from-blue-500 to-cyan-600',
+            category: 'Transport',
             image: '/images/services/Transport & Logistics.jpg'
         },
         {
@@ -44,6 +47,7 @@ const ServicesPage = () => {
             description: 'Professional cleaning for your home. Our trained cleaners use eco-friendly products to leave your space spotless and refreshed, tailored to your specific needs.',
             icon: FiHome,
             gradient: 'from-green-500 to-teal-600',
+            category: 'Home Services',
             image: '/images/services/home_cleaning.jpg'
         },
         {
@@ -52,6 +56,7 @@ const ServicesPage = () => {
             description: 'Keep your garden looking beautiful. Our gardening experts provide lawn mowing, pruning, planting, and seasonal maintenance to enhance your outdoor space.',
             icon: FiScissors,
             gradient: 'from-lime-500 to-green-600',
+            category: 'Home Services',
             image: '/images/services/gardening.jpg'
         },
         {
@@ -60,6 +65,7 @@ const ServicesPage = () => {
             description: 'Quick and efficient delivery services. Whether it\'s documents, parcels, or larger items, we offer reliable same-day and scheduled delivery options.',
             icon: FiPackage,
             gradient: 'from-orange-500 to-red-600',
+            category: 'Transport',
             image: '/images/services/pickup_delivery.jpg'
         },
         {
@@ -68,6 +74,7 @@ const ServicesPage = () => {
             description: 'Expert plumbing repairs and installations. From leaky taps to major pipe work, our licensed plumbers provide fast, reliable solutions for all your plumbing needs.',
             icon: FiDroplet,
             gradient: 'from-blue-600 to-indigo-700',
+            category: 'Maintenance',
             image: '/images/services/Plumbing.jpg'
         },
         {
@@ -76,6 +83,7 @@ const ServicesPage = () => {
             description: 'Professional interior and exterior painting. Transform your space with our expert painters who deliver flawless finishes with quality paints and meticulous attention to detail.',
             icon: FiEdit3,
             gradient: 'from-pink-500 to-rose-600',
+            category: 'Maintenance',
             image: '/images/services/Painting.jpg'
         },
         {
@@ -84,6 +92,7 @@ const ServicesPage = () => {
             description: 'Licensed electrical work and repairs. Our certified electricians handle installations, repairs, safety inspections, and upgrades to keep your property safe and functional.',
             icon: FiZap,
             gradient: 'from-yellow-500 to-orange-600',
+            category: 'Maintenance',
             image: '/images/services/electrical.jpg'
         },
         {
@@ -92,6 +101,7 @@ const ServicesPage = () => {
             description: 'Custom woodwork and furniture repairs. From furniture restoration to custom installations, our skilled carpenters bring craftsmanship and precision to every project.',
             icon: FiTool,
             gradient: 'from-amber-600 to-brown-700',
+            category: 'Maintenance',
             image: '/images/services/carpentry.jpg'
         },
         {
@@ -100,9 +110,15 @@ const ServicesPage = () => {
             description: 'Computer repairs and tech support. Get help with hardware issues, software problems, network setup, and tech support from our qualified IT professionals.',
             icon: FiMonitor,
             gradient: 'from-indigo-500 to-purple-600',
+            category: 'Tech Support',
             image: '/images/services/it_solutions.jpg'
         },
     ];
+
+    // Filter services based on selected category
+    const filteredServices = selectedCategory === 'All Services'
+        ? services
+        : services.filter(service => service.category === selectedCategory);
 
     const handleServiceClick = (service) => {
         if (service.special) {
@@ -166,10 +182,11 @@ const ServicesPage = () => {
                     ].map((category, index) => (
                         <button
                             key={index}
-                            className={`py-2 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap ${index === 0
-                                ? 'bg-primary text-white'
-                                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'}`
-                            }
+                            onClick={() => setSelectedCategory(category)}
+                            className={`py-2 px-3 sm:px-4 rounded-lg text-center text-sm sm:text-base whitespace-nowrap transition-all ${selectedCategory === category
+                                ? 'bg-primary text-white shadow-md'
+                                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                                }`}
                         >
                             {category}
                         </button>
@@ -182,7 +199,7 @@ const ServicesPage = () => {
                     animate="visible"
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
                 >
-                    {services.map((service) => (
+                    {filteredServices.map((service) => (
                         <motion.div
                             key={service.id}
                             variants={itemVariants}
