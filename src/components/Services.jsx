@@ -39,6 +39,14 @@ const Services = () => {
             image: '/images/services/student_arrival.jpg'
         },
         {
+            id: 'it',
+            title: 'IT Solutions',
+            description: 'Computer repairs and tech support',
+            icon: FiMonitor,
+            gradient: 'from-indigo-500 to-purple-600',
+            image: '/images/services/it_solutions.jpg'
+        },
+        {
             id: 'airport',
             title: 'Airport Pick/Drop',
             description: 'Reliable airport transfers with professional drivers',
@@ -46,14 +54,6 @@ const Services = () => {
             gradient: 'from-purple-500 to-indigo-600',
             special: true,
             image: '/images/services/airport_drop.jpg'
-        },
-        {
-            id: 'transport',
-            title: 'Transport & Logistics',
-            description: 'Moving goods and freight with care',
-            icon: FiTruck,
-            gradient: 'from-blue-500 to-cyan-600',
-            image: '/images/services/Transport & Logistics.jpg'
         },
         {
             id: 'cleaning',
@@ -64,6 +64,14 @@ const Services = () => {
             image: '/images/services/home_cleaning.jpg'
         },
         {
+            id: 'pickup',
+            title: 'Pick-up & Delivery',
+            description: 'Quick and efficient delivery services',
+            icon: FiPackage,
+            gradient: 'from-orange-500 to-red-600',
+            image: '/images/services/pickup_delivery.jpg'
+        },
+        {
             id: 'gardening',
             title: 'Gardening & Lawn Mowing',
             description: 'Keep your garden looking beautiful',
@@ -72,12 +80,12 @@ const Services = () => {
             image: '/images/services/gardening.jpg'
         },
         {
-            id: 'pickup',
-            title: 'Pick-up & Delivery',
-            description: 'Quick and efficient delivery services',
-            icon: FiPackage,
-            gradient: 'from-orange-500 to-red-600',
-            image: '/images/services/pickup_delivery.jpg'
+            id: 'cleaning-2',
+            title: 'Home Cleaning',
+            description: 'Professional cleaning for your home',
+            icon: FiHome,
+            gradient: 'from-green-500 to-teal-600',
+            image: '/images/services/home_cleaning.jpg'
         },
         {
             id: 'plumbing',
@@ -112,12 +120,16 @@ const Services = () => {
             image: '/images/services/carpentry.jpg'
         },
         {
-            id: 'it',
-            title: 'IT Solutions',
-            description: 'Computer repairs and tech support',
-            icon: FiMonitor,
-            gradient: 'from-indigo-500 to-purple-600',
-            image: '/images/services/it_solutions.jpg'
+            id: 'education',
+            title: 'Education Service and Form',
+            description: 'Educational assistance and form filling services',
+            icon: () => (
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            ),
+            gradient: 'from-blue-500 to-cyan-600',
+            image: '/images/services/student_arrival.jpg'
         },
     ];
 
