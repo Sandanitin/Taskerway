@@ -54,8 +54,8 @@ const Footer = () => {
                         {/* Social Links */}
                         <div className="flex gap-3">
                             {[
-                                { icon: FiFacebook, href: '#', label: 'Facebook' },
-                                { icon: FiInstagram, href: '#', label: 'Instagram' },
+                                { icon: FiFacebook, href: 'https://www.facebook.com/share/14NnK4qhDR9/?mibextid=wwXIfr', label: 'Facebook' },
+                                { icon: FiInstagram, href: 'https://www.instagram.com/taskerway?igsh=MXMzMm4xOWVzZDh4aA==', label: 'Instagram' },
                                 { icon: FiTwitter, href: '#', label: 'Twitter' },
                                 { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
                             ].map((social, index) => (
