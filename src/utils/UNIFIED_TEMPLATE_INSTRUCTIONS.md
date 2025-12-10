@@ -5,7 +5,7 @@ I have consolidated your email service to use a **single unified template** for 
 ## 1. Update EmailJS Template
 
 1.  Go to your [EmailJS Dashboard](https://dashboard.emailjs.com/admin/templates).
-2.  Open your template with ID: `template_uvnmczx` (or create a new one and update the ID in `src/utils/emailService.js`).
+2.  Open your template with ID: `template_mpisiy2` (or create a new one and update the ID in `src/utils/emailService.js`).
 3.  **Subject Line:**
     ```
     {{#if is_contact_form}}Contact Form Submission{{else}}{{service_type}} Booking Confirmation{{/if}} - Taskerway
@@ -24,7 +24,7 @@ I have consolidated your email service to use a **single unified template** for 
 
 ## 3. Troubleshooting
 
-*   **"EmailJS not configured properly"**: This means the Service ID in `src/utils/emailService.js` (`service_j1it8n7`) does not match the one in your EmailJS dashboard, or the Public Key is incorrect.
+*   **"EmailJS not configured properly"**: This means the Service ID in `src/utils/emailService.js` (`service_kmjkmdk`) does not match the one in your EmailJS dashboard, or the Public Key is incorrect.
 *   **Template issues**: If the email arrives but looks broken, ensure you copied the HTML correctly and that "Auto-Escape" is disabled for the HTML content if that's an option (usually EmailJS handles Handlebars syntax automatically).
 
 ## Key Changes Made
