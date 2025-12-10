@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiPhone, FiMail, FiMapPin, FiClock, FiMessageSquare, FiHeadphones } from 'react-icons/fi';
+import { FiPhone, FiMail, FiMapPin, FiClock, FiMessageSquare, FiHeadphones, FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import { sendContactFormEmail } from '../utils/emailService';
 
 const Contact = () => {
@@ -42,7 +42,7 @@ const Contact = () => {
         subject: '',
         message: ''
     });
-    
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -64,7 +64,7 @@ const Contact = () => {
         try {
             // Combine first and last name
             const fullName = `${formData.firstName} ${formData.lastName}`.trim();
-            
+
             // Prepare data for email service with proper formatting
             const emailData = {
                 name: fullName || 'Anonymous',
@@ -82,11 +82,11 @@ const Contact = () => {
             };
 
             console.log('Sending contact form email with data:', emailData);
-            
+
             // Send email using the contact form service
             const result = await sendContactFormEmail(emailData);
             console.log('Contact form email sent:', result);
-            
+
             // Check if this was a mock response
             if (result && result.mock) {
                 console.warn('Email was sent via mock service, not real EmailJS. Check console for EmailJS errors.');
@@ -192,8 +192,8 @@ const Contact = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-gray-700 mb-2">First Name</label>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="firstName"
                                         value={formData.firstName}
                                         onChange={handleInputChange}
@@ -204,8 +204,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <label className="block text-gray-700 mb-2">Last Name</label>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="lastName"
                                         value={formData.lastName}
                                         onChange={handleInputChange}
@@ -217,8 +217,8 @@ const Contact = () => {
                             </div>
                             <div>
                                 <label className="block text-gray-700 mb-2">Email</label>
-                                <input 
-                                    type="email" 
+                                <input
+                                    type="email"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleInputChange}
@@ -229,8 +229,8 @@ const Contact = () => {
                             </div>
                             <div>
                                 <label className="block text-gray-700 mb-2">Subject</label>
-                                <input 
-                                    type="text" 
+                                <input
+                                    type="text"
                                     name="subject"
                                     value={formData.subject}
                                     onChange={handleInputChange}
@@ -241,29 +241,28 @@ const Contact = () => {
                             </div>
                             <div>
                                 <label className="block text-gray-700 mb-2">Message</label>
-                                <textarea 
+                                <textarea
                                     name="message"
                                     value={formData.message}
                                     onChange={handleInputChange}
-                                    rows="5" 
+                                    rows="5"
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                                     placeholder="Your message here..."
                                     required
                                 ></textarea>
                             </div>
-                            
+
                             {/* Submit status message */}
                             {submitStatus && (
-                                <div className={`p-4 rounded-lg ${
-                                    submitStatus.type === 'success' ? 'bg-green-100 text-green-800' :
+                                <div className={`p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-100 text-green-800' :
                                     submitStatus.type === 'error' ? 'bg-red-100 text-red-800' :
-                                    'bg-yellow-100 text-yellow-800'
-                                }`}>
+                                        'bg-yellow-100 text-yellow-800'
+                                    }`}>
                                     {submitStatus.message}
                                 </div>
                             )}
-                            
-                            <button 
+
+                            <button
                                 type="submit"
                                 disabled={isSubmitting}
                                 className="btn btn-primary w-full"
@@ -277,11 +276,11 @@ const Contact = () => {
                     <div>
                         <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Contact Us?</h3>
                         <p className="text-gray-600 mb-8">
-                            Our customer support team is ready to assist you with any questions or concerns. 
-                            Whether you need help booking a service, have a question about our offerings, 
+                            Our customer support team is ready to assist you with any questions or concerns.
+                            Whether you need help booking a service, have a question about our offerings,
                             or want to provide feedback, we're here for you.
                         </p>
-                        
+
                         <div className="space-y-6">
                             {[
                                 {
@@ -306,7 +305,7 @@ const Contact = () => {
                                 </div>
                             ))}
                         </div>
-                        
+
                         <div className="mt-8 p-6 bg-gradient-to-r from-primary to-secondary rounded-xl text-white">
                             <h4 className="font-bold text-xl mb-2">Emergency Service</h4>
                             <p className="mb-4">For urgent matters outside business hours, call our emergency line:</p>
@@ -328,19 +327,26 @@ const Contact = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-6">Follow Us</h3>
                     <p className="text-gray-600 mb-6">Stay connected and get the latest updates</p>
                     <div className="flex justify-center gap-4">
-                        {['Facebook', 'Instagram', 'LinkedIn'].map((platform) => (
-                            <div
-                                key={platform}
-                                className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors cursor-pointer"
-                                title={`${platform} - Coming Soon`}
+                        {[
+                            { name: 'Facebook', icon: FiFacebook, href: 'https://www.facebook.com/share/14NnK4qhDR9/?mibextid=wwXIfr' },
+                            { name: 'Instagram', icon: FiInstagram, href: 'https://www.instagram.com/taskerway?igsh=MXMzMm4xOWVzZDh4aA==' },
+                            { name: 'LinkedIn', icon: FiLinkedin, href: '#' }
+                        ].map((platform) => (
+                            <a
+                                key={platform.name}
+                                href={platform.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                                title={platform.name}
                             >
-                                <span className="text-2xl">•</span>
-                            </div>
+                                <platform.icon className="w-6 h-6" />
+                            </a>
                         ))}
                     </div>
                 </motion.div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 };
 
